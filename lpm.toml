@@ -1,0 +1,47 @@
+schema_version = 1
+
+[project]
+package = "lilygo-ui-terminal"
+version = "0.1.0"
+app_id = "cc.lilygo.ui.Terminal"
+title = "Terminal"
+summary = "Interactive shell for LILYGO devices"
+description = "Run an interactive device shell with touch keyboard input, common terminal keys, ANSI output, and persistent font sizing."
+license = "MIT"
+source_repo = "https://github.com/LILYGO-UI/lilygo-ui-terminal"
+homepage = "https://github.com/LILYGO-UI/lilygo-ui-terminal"
+categories = ["Development", "System"]
+
+[[project.authors]]
+name = "lbuque"
+email = "110239031@qq.com"
+
+[project.assets]
+icon = "assets/app-icon.png"
+
+[[project.assets.screenshots]]
+path = "assets/previews/preview1.png"
+caption = "Main application screen"
+
+[[project.permissions]]
+id = "filesystem"
+access = "read-write"
+scope = "shared-data"
+reason = "Run shell commands against user files and persist terminal settings"
+
+[project.compatibility]
+architectures = ["arm64"]
+min_appkit_version = "0.1.0"
+
+[project.launcher]
+order = 90
+
+[build]
+host_preset = "host-simulator"
+cross_preset = "cm0-cross"
+package_dir = "dist"
+
+[deploy]
+host = "raspberrypi.local"
+user = "pi"
+port = 22
