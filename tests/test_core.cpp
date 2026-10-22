@@ -101,6 +101,12 @@ void test_model_and_persistence()
 
     command = model.handle_key(TerminalKey::arrow_left);
     assert(command.bytes == "\x1b[D");
+    command = model.handle_key(TerminalKey::backtab);
+    assert(command.bytes == "\x1b[Z");
+    command = model.handle_key(TerminalKey::home);
+    assert(command.bytes == "\x1b[H");
+    command = model.handle_key(TerminalKey::end);
+    assert(command.bytes == "\x1b[F");
     command = model.handle_key(TerminalKey::font_up);
     assert(command.font_changed);
     assert(model.font_size() == 22);

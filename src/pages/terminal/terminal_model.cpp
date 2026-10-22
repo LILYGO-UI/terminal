@@ -82,6 +82,9 @@ TerminalCommand TerminalModel::handle_key(TerminalKey key)
         case TerminalKey::tab:
             command.bytes = "\t";
             break;
+        case TerminalKey::backtab:
+            command.bytes = "\x1b[Z";
+            break;
         case TerminalKey::enter:
             command.bytes = "\r";
             break;
@@ -106,6 +109,12 @@ TerminalCommand TerminalModel::handle_key(TerminalKey key)
             break;
         case TerminalKey::arrow_right:
             command.bytes = "\x1b[C";
+            break;
+        case TerminalKey::home:
+            command.bytes = "\x1b[H";
+            break;
+        case TerminalKey::end:
+            command.bytes = "\x1b[F";
             break;
         case TerminalKey::backspace:
             command.bytes = "\x7f";

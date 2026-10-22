@@ -22,13 +22,20 @@ for development and testing.
   pipes, interactive programs, and process interruption.
 - **Touch keyboard:** four modes for lowercase letters, capitals, numbers, and
   symbols, plus dedicated terminal keys and one-shot `Ctrl` combinations.
+- **Special-key window:** open a larger selection window for terminal control
+  keys from the side-panel entry.
 - **Session controls:** clear the local screen or restart the shell session.
+- **Exit button:** close the terminal application from the header.
 - **Persistent font size:** select 14, 18, or 22 px; the next launch restores
   the selected size.
 - **Responsive layout:** portrait, landscape, and compact layouts update both
   the terminal screen buffer and the PTY window size.
 - **Hardware input:** forward keyboard input when the LVGL runtime supplies
-  key events.
+-  key events. Printable keys, Enter, Escape, Tab, Backspace, arrows, Home,
+  and End are sent to the shell; the SDL simulator accepts the host keyboard
+  as well.
+- **Hardware keyboard:** hide the bottom software keyboard while the device
+  keyboard is connected; the special-key entry remains available.
 
 Commands inherit the UI process's permissions. An ordinary launch uses the
 current user; when Launcher runs as root, the shell also runs as root.

@@ -18,7 +18,8 @@ void app_open(const cm0_app_context_t *context)
 {
     app_state.terminal_view_model = std::make_unique<TerminalViewModel>();
     app_state.terminal_view       = std::make_unique<TerminalView>(*app_state.terminal_view_model);
-    app_state.terminal_view->create(context->root, LILYGO_UI_TERMINAL_APP_NAME);
+    app_state.terminal_view->create(context->root, LILYGO_UI_TERMINAL_APP_NAME, context->request_exit,
+                                    context->user_data);
 }
 
 void app_close()

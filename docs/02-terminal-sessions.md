@@ -59,10 +59,13 @@ or `/` if that directory cannot be entered.
 | Control | Behavior |
 | --- | --- |
 | Touch keyboard | Switch between lowercase, uppercase, numbers, and symbols. |
+| Special keys | Open the special-key window for terminal controls. |
+| Exit button | Close the Terminal application. |
 | `Ctrl` | Toggle a one-shot modifier; the next letter sends its control character. A second tap cancels it. |
 | `C`, `D`, `L` | Send the letter normally, or `Ctrl+C`, `Ctrl+D`, `Ctrl+L` when Ctrl is armed. |
 | `Esc`, `Tab`, `Enter` | Send escape, tab, and carriage return. |
 | Arrow keys | Send standard ANSI cursor-key sequences. |
+| Physical keyboard | Printable keys and standard editing/navigation keys are sent directly to the shell. `Shift+Tab` sends the ANSI back-tab sequence. |
 | `BS` | Send the delete byte (`0x7f`) used for backspace. |
 | `Clear` | Reset the local screen buffer without sending input or stopping the shell. |
 | `Restart` | Stop the old shell and open a fresh session. |
